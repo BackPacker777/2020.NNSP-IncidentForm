@@ -1,0 +1,16 @@
+{
+  "name": "2020.nnsp.incident.form",
+  "version": "5.0.0",
+  "description": "For generating Ski Patrol incident forms - NextGen",
+  "main": "bin/server",
+  "scripts": {
+    "start": "node bin/server"
+  },
+  "author": "Howard Bates",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "latest",
+    "formidable": "latest",
+    "sqlite3": "latest"
+  }
+}

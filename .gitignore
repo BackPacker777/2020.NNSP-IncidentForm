@@ -1,0 +1,4 @@
+node_modules
+.idea/vcs.xml
+.idea/workspace.xml
+data/log_db.json

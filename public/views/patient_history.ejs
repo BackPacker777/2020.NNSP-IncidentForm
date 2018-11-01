@@ -1,0 +1,32 @@
+<fieldset>
+    <legend><strong>Patient History</strong></legend>
+    <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+            <span class="label expand-label"> Prior Injury/Illness</span><br>
+            <textarea name="priorInjury" id="priorInjury" placeholder="Describe prior injury/illness"></textarea>
+        </div>
+        <div class="small-2 cell">
+            <span class="label expand-label"> Year</span><br>
+            <input name="yearInjured" id="yearInjured" placeholder="injured/illness" type="number">
+        </div>
+        <div class="small-2 cell">
+            <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Health Insurance?</span><br><span id="healthInsurance"></span>
+            <input name="healthInsurance" id="hiYes" value="Yes" type="radio" required><label expand-labelfor="hiYes">Yes</label>
+            <input name="healthInsurance" id="hiNo" value="No" type="radio" required><label expand-labelfor="hiNo">No</label>
+        </div>
+        <div class="small-3 cell">
+            <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Medications</span><br>
+            <textarea name="meds" id="meds" placeholder="List any medications taken" required></textarea>
+        </div>
+        <div class="small-2 cell">
+            <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Ticket Type</span><br>
+            <input name="ticketType" id="ticketType" placeholder="Ticket Type" type="text" required class="exposer">
+        </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="small-12 cell end">
+            <span class="label expand-label"> Group Name</span><br>
+            <input name="group" id="group" placeholder="Group" type="text">
+        </div>
+    </div>
+</fieldset>

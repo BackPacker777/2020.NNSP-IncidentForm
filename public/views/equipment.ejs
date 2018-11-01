@@ -1,0 +1,102 @@
+<fieldset>
+<legend><strong>Equipment</strong></legend>
+	<div class="grid-x grid-padding-x">
+		<div class="small-4 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Type</span><br>
+			<input type="radio" name="equipmentType" id="equipAlpine" value="Alpine" required><label expand-labelfor="equipAlpine">Alpine</label>
+			<input type="radio" name="equipmentType" id="equipNordic" value="Nordic" required><label expand-labelfor="equipNordic">Nordic</label>
+			<input type="radio" name="equipmentType" id="equipSnowboard" value="Snowboard" required><label expand-labelfor="equipSnowboard">Snowboard</label>
+			<input type="radio" name="equipmentType" id="equipOther" value="Other" required><label expand-labelfor="equipOther">Other</label>
+		</div>
+		<div class="small-8 cell" id="otherEquipYes">
+			<span class="label expand-label"> Other equipment</span>
+			<br><input type="text" id="otherEquip" name="otherEquip" placeholder="Other Equipment">
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-3 cell" id="leftToeDin">
+			<span class="label expand-label"> Left Din</span><br>
+			<input name="leftDinToe" id="leftDinToe" type="number" min="0" max="20" step=".5" placeholder="Toe">
+		</div>
+		<div class="small-3 cell" id="leftHeelDin">
+			<br><input name="leftDinHeel" id="leftDinHeel" type="number" min="0" max="20" step=".5" placeholder="Heel">
+		</div>
+		<div class="small-3 cell" id="rightToeDin">
+			<span class="label expand-label"> Right Din</span><br>
+			<input name="rightDinToe" id="rightDinToe" type="number" min="0" max="20" step=".5" placeholder="Toe">
+		</div>
+		<div class="small-3 cell" id="rightHeelDin">
+			<br><input name="rightDinHeel" id="rightDinHeel" type="number" min="0" max="20" step=".5" placeholder="Heel">
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-12 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Owner</span><br>
+			<input type="radio" name="owner" id="ownerOwn" value="Owned" required><label expand-labelfor="ownerOwn">Own</label>
+			<input type="radio" name="owner" id="ownerRent" value="AreaRental" required><label expand-labelfor="ownerArea">Area Rental</label>
+			<input type="radio" name="owner" id="ownerBorrowed" value="Borrowed" required><label expand-labelfor="ownerBorrowed">Borrowed</label>
+			<input type="radio" name="owner" id="ownerDemo" value="Demo" required><label expand-labelfor="ownerDemo">Demo</label>
+			<input type="radio" name="owner" id="ownerOther" value="OtherRental" required><label expand-labelfor="ownerOther">Other Rental</label>
+		</div>
+	</div>
+	<div id="rentalEquip">
+		<div class="grid-x grid-padding-x">
+			<div class="small-4 cell">
+				<input id="shopName" name="shopName" type="text" placeholder="If rented, shop name">
+			</div>
+			<div class="small-6 cell">
+				<input id="shopStreet" name="shopStreet" type="text" placeholder="Street number">
+			</div>
+			<div class="small-2 cell">
+				<input id="shopZip" name="shopZip" type="text" placeholder="Zip code" pattern="[0-9]{5}">
+				<input id="shopCity" name="shopCity" type="hidden">
+				<input id="shopState" name="shopState" type="hidden">
+			</div>
+		</div>
+	</div>
+	<div id="rentalEquipNums">
+		<div class="grid-x grid-padding-x">
+			<div class="small-6 cell">
+				<input id="skiNum" name="skiNum" type="number" placeholder="Ski/Board Number">
+			</div>
+			<div class="small-6 cell">
+				<input id="bootNum" name="bootNum" type="number" placeholder="Boot Number">
+			</div>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-3 cell">
+			<span class="label  expand-label"> Binding Make</span><br>
+			<input name="bindingMake" id="bindingMake" type="text" placeholder="Binding Make">
+		</div>
+		<div class="small-3 cell">
+			<span class="label expand-label"> Binding Model</span><br>
+			<input name="bindingModel" id="bindingModel" type="text" placeholder="Binding Model">
+		</div>
+		<div class="small-2 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Helmet Worn?</span><br>
+			<input type="radio" name="helmet" id="helmetN" value="No" required><label for="helmetN">No</label>
+			<input type="radio" name="helmet" id="helmetY" value="Yes" required><label for="helmetY">Yes</label>
+		</div>
+		<div class="small-2 cell" id="helmetYes">
+			<span class="label expand-label"> Helmet area rental?</span><br>
+			<input type="radio" class="radio" name="helmetRental" id="helmetRentalNo" value="No"><label for="rentalNo">No</label>
+			<input type="radio" class="radio" name="helmetRental" id="helmetRentalYes" value="Yes"><label for="rentalYes">Yes</label>
+		</div>
+		<div class="small-2 cell end" id="helmetRentalYep">
+			<span class="label expand-label"> Helmet rental number:</span><br>
+			<input name="helmetRentalNum" id="helmetRentalNum" type="number" placeholder="Helmet #">
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-3 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Known videos or photos of incident?</span><br>
+			<input type="radio" name="video" id="videoN" value="No" required class="exposer"><label for="videoN">No</label>
+			<input type="radio" name="video" id="videoY" value="Yes" required class="exposer"><label for="videoY">Yes</label>
+		</div>
+		<div class="small-9 cell end" id="videoYes">
+			<span class="label expand-label"> Name of person with photos:</span><br>
+			<input name="videoName" id="videoName" type="text" placeholder="Name">
+		</div>
+	</div>
+</fieldset>

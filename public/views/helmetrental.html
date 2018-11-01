@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="NNSP Incident Report App">
+    <title>NNSP Helmet Rental Form</title>
+    <link href="/public/css/results.css" rel="stylesheet">
+</head>
+<body>
+<div class="grid-x grid-padding-x height-3">
+    <div class="col-20">
+        <span class="textCenter center h4">NUB'S NOB POST INCIDENT EQUIPMENT INSPECTION REPORT:</span><br>
+        <br><span class="textCenter center h4">HELMETS</span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-3">
+        <span class="middle">INCIDENT DATE:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="incidentDate"></span>
+    </div>
+    <div class="col-3">
+        <span class="middle">DAY OF WEEK:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="day"></span>
+    </div>
+    <div class="col-3">
+        <span class="middle">TIME OF INCIDENT:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="incidentTime"></span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBottom height-14">
+    <div class="col-2 br">
+        <span class="textCenter middle center">USER INFORMATION</span>
+    </div>
+    <div class="col-17 top">
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-9 top">
+                <br><span>NAME: </span><span id="firstName"></span> <span id="lastName"></span>
+            </div>
+            <div class="col-9 top">
+                <br><span> CONTRACT NAME: </span><span id="contractName"></span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-4 top">
+                <input type="checkbox" name="gender" id="male"><label expand-labelfor="male">MALE </label> <input type="checkbox" name="gender" id="female"><label expand-labelfor="female">FEMALE</label>
+            </div>
+            <div class="col-3 top">
+                <span> HT: </span><span id="height"></span>
+            </div>
+            <div class="col-3 top">
+                <span> WT: </span><span id="weight"></span>
+            </div>
+            <div class="col-3 top">
+                <span> AGE: </span><span id="age"></span>
+            </div>
+            <div class="col-4 top">
+                <span> ABILITY: </span><span id="ability"></span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-17 top">
+                <span>DESCRIPTION OF INCIDENT: </span><span id="incidentDescription"></span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-20 top">
+                <span>NATURE OF INJURY: </span><span id="injuryNature"></span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-20 top">
+                <span>LOCATION (TRAIL NAME):</span><span id="location"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-6">
+    <div class="col-2 br">
+        <span class="textCenter middle center">HELMET INFORMATION</span>
+    </div>
+    <div class="col-17 top">
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-9 top">
+                <br><span>HELMET BRAND:______________________________</span>
+            </div>
+            <div class="col-9 top">
+                <br><span> HELMET MODEL:______________________________</span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-6 top">
+                <br><span>RENTAL #:___________</span>
+            </div>
+            <div class="col-6 top">
+                <br><span> SIZE:___________</span>
+            </div>
+            <div class="col-6 top">
+                <br><span> COLOR:___________</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-41">
+    <div class="col-2 br">
+        <span class="textCenter middle center">HELMET INSPECTION</span>
+    </div>
+    <div class="col-17 top">
+        <div class="col-20 top">
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-10 top">
+                    <br><span>SHOP NAME:______________________________________</span>
+                </div>
+                <div class="col-9 top">
+                    <br><span> SHOP LOCATION:_________________________________</span>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-12 top">
+                    <br><span>TECHNICIAN NAME:______________________________________</span>
+                </div>
+                <div class="col-7 top">
+                    <br><span> INSPECTION DATE:_____________________</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-8 top">
+                    <span>SHELL INTACT & UNDAMAGED </span>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>YES </label>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>NO</label>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-8 top">
+                    <span>LINER INTACT & UNDAMAGED </span>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>YES </label>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>NO</label>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-8 top">
+                    <span>STRAP & BUCKLES INTACT & UNDAMAGED </span>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>YES </label>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>NO</label>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-8 top">
+                    <span>ALL STANDARD LABELS PRESENT & LEGIBLE </span>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>YES </label>
+                </div>
+                <div class="col-2 top">
+                    <input type="checkbox"><label>NO</label>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x grid-padding-x-noBorder">
+                <div class="col-20 top">
+                    <span>COMMENTS:____________________________________________________________________________________________________</span>
+                    <br><br>
+                    <span>______________________________________________________________________________________________________________</span>
+                    <br><br>
+                    <span>______________________________________________________________________________________________________________</span>
+                    <br><br>
+                    <span>______________________________________________________________________________________________________________</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x height-35">
+    <div class="col-2 br">
+        <span class="textCenter middle center">HELMET STATUS</span>
+    </div>
+    <div class="col-17 top">
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-1 top">
+                <input type="checkbox">
+            </div>
+            <div class="col-8 top">
+                <span>RETAINED BY SHOP </span>
+            </div>
+            <div class="col-1 top">
+                <input type="checkbox">
+            </div>
+            <div class="col-8 top">
+                <span>RETAINED BY CUSTOMER </span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-1 top">
+                <input type="checkbox">
+            </div>
+            <div class="col-8 top">
+                <span>RETURNED TO MANUFACTURER </span>
+            </div>
+            <div class="col-1 top">
+                <input type="checkbox">
+            </div>
+            <div class="col-8 top">
+                <span>RETURNED TO INVENTORY </span>
+            </div>
+        </div>
+        <br>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-20 top">
+                <span>COMMENTS:____________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+                <br><br>
+                <span>______________________________________________________________________________________________________________</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-20">
+        <br><span>NAME OF TECHNICIAN COMPLETING INSPECTION & REPORT:_____________________________________________________________</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-12">
+        <span>SIGNATURE:_____________________________________________________________</span>
+    </div>
+    <div class="col-6">
+        <span>DATE: <span id="date"></span> </span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-5">
+        <span>MG19 - 1/05 :: Bates v.3.2.10</span>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="/public/javascripts/helmetResult.js"></script>
+</body>
+</html>

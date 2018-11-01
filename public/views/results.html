@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="NNSP Incident Report App">
+    <title>NNSP Winter Incident Report Form</title>
+    <link href="/public/css/results.css" rel="stylesheet">
+</head>
+<body>
+<div class="grid-x grid-padding-x height-1">
+    <div class="col-20">
+        <span class="textCenter center middle h4">NUB'S NOB WINTER INCIDENT FORM</span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-4">
+        <span class="middle">INCIDENT #: __________</span>
+    </div>
+    <div class="col-1">
+        <span class="middle">DATE:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="date"></span>
+    </div>
+    <div class="col-2">
+        <span class="middle">DAY OF WEEK:</span>
+    </div>
+    <div class="col-2">
+        <span class="middle" id="day"></span>
+    </div>
+    <div class="col-3">
+        <span class="middle">TIME OF INCIDENT:</span>
+    </div>
+    <div class="col-1">
+        <span class="middle" id="incidentTime"></span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBottom height-3">
+    <div class="col-2 br">
+        <span class="textCenter middle center">LOCATION</span>
+    </div>
+    <div class="col-2 br top">
+        <input type="checkbox" name="location" id="hill"><label expand-labelfor="hill">ON HILL</label><br>
+        <input type="checkbox" name="location" id="lift"><label expand-labelfor="lift">LIFT</label><br>
+        <input type="checkbox" name="location" id="premise"><label expand-labelfor="premise">PREMISE</label>
+    </div>
+    <div class="col-8 top">
+        <span>DESCRIBE SPECIFIC LOCATION:</span><br>
+        <span id="location"></span><br>
+        <span id="specificLocation"></span>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="difficulty" id="easier"><label expand-labelfor="easier">EASIER</label><br>
+        <input type="checkbox" name="difficulty" id="moreDiff"><label expand-labelfor="moreDiff">MORE DIFFICULT</label><br>
+        <input type="checkbox" name="difficulty" id="mostDiff"><label expand-labelfor="mostDiff">MOST DIFFICULT</label>
+    </div>
+    <div class="col-4 top">
+        <input type="checkbox" name="difficulty" id="experts"><label expand-labelfor="experts">EXPERTS ONLY</label><br>
+        <input type="checkbox" name="difficulty" id="freestyle"><label expand-labelfor="freestyle">FREESTYLE TERRAIN</label><br>
+        <input type="checkbox" name="difficulty" id="na"><label expand-labelfor="na">NOT APPLICABLE</label>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-4">
+    <div class="col-2 br">
+        <span class="textCenter middle">INJURED PERSON</span>
+    </div>
+    <div class="col-8 top">
+        <span>NAME: </span><span id="firstName"></span> <span id="lastName"></span><br>
+        <span>ADDRESS: </span><span id="patientStreet"></span><br>
+        <span>CITY: </span><span id="patientCity"></span> <span>STATE: </span><span id="patientState"></span> <span>ZIP: </span> <span id="patientZip"></span><br>
+        <span>HOME PHONE: </span><span id="homePhoneNum"></span><br>
+        <span>EMAIL ADDRESS: </span><span id="email"></span>
+    </div>
+    <div class="col-6 top">
+        <input type="checkbox" name="gender" id="male"><label expand-labelfor="male">MALE</label><br>
+        <input type="checkbox" name="gender" id="female"><label expand-labelfor="female">FEMALE</label><br>
+        <span>CELL: </span><span id="cellPhoneNum"></span><br>
+        <span>OCCUPATION: </span><span id="occupation"></span>
+    </div>
+    <div class="col-3 top">
+        <span>DOB: </span><span id="dob"></span><br>
+        <span>AGE: </span><span id="age"></span><br>
+        <span>HT: </span><span id="height"></span><br>
+        <span>WT: </span><span id="weight"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-4">
+    <div class="col-2 br">
+        <span class="textCenter middle">SKIING HISTORY</span>
+    </div>
+    <div class="col-4 top br">
+        <span class="textCenter center bold ul">ABILITY</span><br>
+        <input type="checkbox" name="ability" id="beginner"><label expand-labelfor="beginner">BEGINNER </label> <input type="checkbox" name="ability" id="abilityNA"><label expand-labelfor="abilityNA">N/A</label><br>
+        <input type="checkbox" name="ability" id="intermediate"><label expand-labelfor="intermediate">INTERMEDIATE</label><br>
+        <input type="checkbox" name="ability" id="advanced"><label expand-labelfor="advanced">ADVANCED/EXPERT</label>
+    </div>
+    <div class="col-5 top br">
+        <span class="textCenter center bold ul">LESSONS</span><br>
+        <input type="checkbox" name="lesson" id="inLesson"><label expand-labelfor="inLesson">IN LESSON</label><br>
+        <span>INSTRUCTOR: </span><span id="instYep"></span><br>
+        <input type="checkbox" name="lesson" id="lessonNA"><label expand-labelfor="lessonNA">N/A</label>
+    </div>
+    <div class="col-4 br top">
+        <span class="textCenter center bold ul">NUMBER OF TIMES ON:</span><br>
+        <div class="col-6 top">
+            <input type="checkbox" name="numTimes" id="numTimesTrail"><label expand-labelfor="numTimesTrail">TRAIL</label><br>
+            <input type="checkbox" name="numTimes" id="numTimesLift"><label expand-labelfor="numTimesLift">LIFT</label><br>
+        </div>
+        <div class="col-9 top">
+            <input type="checkbox" name="numTimes" id="trailLiftToday"><label expand-labelfor="trailLiftToday">TODAY: </label> <span class="ul" id="timesToday"></span><br>
+            <input type="checkbox" name="numTimes" id="trailLiftPrior"><label expand-labelfor="trailLiftPrior">PRIOR: </label> <span class="ul" id="timesPrior"></span>
+        </div>
+        <span>OTHER: </span><span id="timesOther"></span>
+    </div>
+    <div class="col-4 top">
+        <span class="textCenter center bold ul">EQUIPMENT REMOVED BY:</span><br>
+        <div class="col-9 top">
+            <input type="checkbox" name="equipRemove" id="equipRemoveFall"><label expand-labelfor="equipRemoveFall">FALL</label><br>
+            <input type="checkbox" name="equipRemove" id="equipRemoveInjured"><label expand-labelfor="equipRemoveInjured">INJURED</label><br>
+        </div>
+        <div class="col-9 top">
+            <input type="checkbox" name="numTimes" id="equipRemovePatrol"><label expand-labelfor="equipRemovePatrol">PATROL</label><br>
+            <input type="checkbox" name="numTimes" id="equipRemoveOther"><label expand-labelfor="equipRemoveOther">OTHER</label>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-2">
+    <div class="col-2 br">
+        <span class="textCenter middle">PATIENT HISTORY</span>
+    </div>
+    <div class="col-12 top">
+        <span>PRIOR INJURY/ILLNESS - DESCRIBE: </span> <span id="priorInjury"></span><br>
+        <span>LIST ANY MEDS TAKEN: </span> <span id="meds"></span><br>
+        <span>TICKET TYPE: </span> <span id="ticketType"></span>
+    </div>
+    <div class="col-5 top">
+        <span>YEAR INJURED: </span> <span id="yearInjured"></span><br>
+        <span>MEDICAL INSURANCE? </span>
+        <input type="checkbox" name="insurance" id="insuranceYes"><label expand-labelfor="insuranceYes">YES</label>
+        <input type="checkbox" name="insurance" id="insuranceNo"><label expand-labelfor="insuranceNo">NO</label>
+        <br>
+        <span>GROUP NAME: </span> <span id="group"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-13">
+    <div class="col-2 br">
+        <span class="textCenter middle">INJURED'S EQUIPMENT</span>
+    </div>
+    <div class="col-17 top height-7">
+        <div class="col-3 top">
+            <input type="checkbox" name="equipType" id="alpine"><label expand-labelfor="alpine">ALPINE</label><br>
+            <input type="checkbox" name="equipType" id="nordic"><label expand-labelfor="nordic">NORDIC</label><br>
+            <input type="checkbox" name="equipType" id="snowboard"><label expand-labelfor="snowboard">SNOWBOARD</label><br>
+            <input type="checkbox" name="equipType" id="equipOther"><label expand-labelfor="equipOther">OTHER EQUIP:</label><br>
+            <span id="equipTypeOther"></span><br>
+        </div>
+        <div class="col-3 top">
+            <input type="checkbox" name="equipOwner" id="owned"><label expand-labelfor="owned">OWNED</label><br>
+            <input type="checkbox" name="equipOwner" id="areaRental"><label expand-labelfor="areaRental">AREA RENTAL</label><br>
+            <input type="checkbox" name="equipOwner" id="otherRental"><label expand-labelfor="otherRental">OTHER RENTAL</label><br>
+            <input type="checkbox" name="equipOwner" id="borgrid-x grid-padding-xed"><label expand-labelfor="borgrid-x grid-padding-xed">BORgrid-x grid-padding-xED</label><br>
+            <input type="checkbox" name="equipOwner" id="demo"><label expand-labelfor="demo">DEMO</label>
+        </div>
+        <div class="col-8 top">
+            <span>BINDING MAKE/MODEL: </span><span id="bindingMake"></span> <span> / </span> <span id="bindingModel"></span><br>
+            <span>SKI/BOARD #: </span> <span id="skiNum"></span>
+            <span>. . . BOOT #: </span> <span id="bootNum"></span><br>
+            <br><span>IF RENTED, SHOP NAME: </span> <span id="shopName"></span> <br>
+            <span>ADDRESS: </span><span id="shopStreet"></span><span>, </span><span id="shopCity"></span><span>, </span><span id="shopState"></span>
+            <span> </span><span id="shopZip"></span>
+        </div>
+        <div class="col-5 top">
+            <div class="grid-x grid-padding-x-noBottom height-1 grey">
+                <div class="col-10 top">
+                    <span class="middle center textCenter">LEFT DIN</span>
+                </div>
+                <div class="col-9 top">
+                    <span class="middle center textCenter">RIGHT DIN</span>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x height-2">
+                <div class="col-4 top br">
+                    <span class="center textCenter">TOE</span>
+                    <span class="middle center textCenter" id="leftDinToe"></span>
+                </div>
+                <div class="col-4 top br">
+                    <span class="center textCenter">HEEL</span>
+                    <span class="middle center textCenter" id="leftDinHeel"></span>
+                </div>
+                <div class="col-4 top br">
+                    <span class="center textCenter">TOE</span>
+                    <span class="middle center textCenter" id="rightDinToe"></span>
+                </div>
+                <div class="col-4 top">
+                    <span class="center textCenter">HEEL</span>
+                    <span class="middle center textCenter" id="rightDinHeel"></span>
+                </div>
+            </div>
+        </div>
+        <br><span>HELMET WORN? </span>
+        <input type="checkbox" name="helmetWorn" id="helmetYes"><label expand-labelfor="helmetYes">YES </label>
+        <input type="checkbox" name="helmetWorn" id="helmetNo"><label expand-labelfor="helmetNo">NO </label>
+        <span>. . . HELMET AREA RENTAL? </span>
+        <input type="checkbox" name="helmetRental" id="helmetRentalYes"><label expand-labelfor="helmetRentalYes">YES </label>
+        <input type="checkbox" name="helmetRental" id="helmetRentalNo"><label expand-labelfor="helmetRentalNo">NO </label>
+        <span>. . . HELMET RENTAL #: </span><span id="helmetRentalNum"></span><br>
+        <span class="bold">KNOWN VIDEO OR PHOTOS OF INCIDENT? </span>
+        <input type="checkbox" name="video" id="videoYes"><label expand-labelfor="videoYes">YES </label>
+        <input type="checkbox" name="video" id="videoNo"><label expand-labelfor="videoNo">NO . . . </label>
+        <span class="bold">NAME OF PERSON WITH PHOTOS: </span>
+        <span id="videoName" class="ul"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-10">
+    <div class="col-2 br top">
+        <span class="textCenter middle">DESCRIPTION OF INCIDENT (Skiers words)</span>
+    </div>
+    <div class="col-17 top height-4">
+        <div class="grid-x grid-padding-x-noBorder height-4" id="incidentDescription"></div>
+        <div class="grid-x grid-padding-x-noBorder height-1">
+            <div class="col-10 bottom-1">
+                <span class="bold">THE ABOVE STATEMENT IS TRUE & CORRECT</span><br>
+                <span>PARENT/GUARDIAN SIGNATURE________________________</span>
+            </div>
+            <div class="col-9 bottom-1">
+                <span>INJURED'S SIGNATURE__________________________</span><br>
+                <span>STATEMENT TAKEN BY: </span><span id="statementTaker"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-2">
+    <div class="col-2 br">
+        <span class="textCenter middle">PROBABLE INJURY</span>
+    </div>
+    <div class="col-17 top">
+        <input type="checkbox" name="injury" id="fracture"><label expand-labelfor="fracture">FRACTURE</label>
+        <input type="checkbox" name="injury" id="puncture"><label expand-labelfor="puncture">PUNCTURE/LACERATION</label>
+        <input type="checkbox" name="injury" id="abrasion"><label expand-labelfor="abrasion">ABRASION</label>
+        <input type="checkbox" name="injury" id="dislocation"><label expand-labelfor="dislocation">DISLOCATION</label>
+        <input type="checkbox" name="injury" id="multipleType"><label expand-labelfor="multipleType">MULTIPLE</label>
+        <input type="checkbox" name="injury" id="illness"><label expand-labelfor="illness">ILLNESS</label>
+        <input type="checkbox" name="injury" id="sprain"><label expand-labelfor="sprain">SPRAIN/STRAIN</label><br>
+        <input type="checkbox" name="injury" id="bruise"><label expand-labelfor="bruise">BRUISE/CONTUSION</label>
+        <input type="checkbox" name="injury" id="concussion"><label expand-labelfor="concussion">CONCUSSION</label>
+        <input type="checkbox" name="injury" id="frostbite"><label expand-labelfor="frostbite">FROSTBITE</label>
+        <input type="checkbox" name="injury" id="injOther"><label expand-labelfor="injOther">OTHER: </label>
+        <span id="injuryTypeOther"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-7">
+    <div class="col-2 br">
+        <span class="textCenter center middle">INJURY ZONE</span>
+    </div>
+    <div class="col-2 br top">
+        <input type="checkbox" name="injuryZone" id="left"><label expand-labelfor="left">LEFT</label><br>
+        <input type="checkbox" name="injuryZone" id="right"><label expand-labelfor="right">RIGHT</label><br>
+        <input type="checkbox" name="injuryZone" id="both"><label expand-labelfor="both">BOTH</label><br>
+        <input type="checkbox" name="injuryZone" id="multipleZone"><label expand-labelfor="multipleZone">MULTIPLE</label>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="injuryZone" id="upperLeg"><label expand-labelfor="upperLeg">UPPER LEG</label><br>
+        <input type="checkbox" name="injuryZone" id="knee"><label expand-labelfor="knee">KNEE</label><br>
+        <input type="checkbox" name="injuryZone" id="lowerLeg"><label expand-labelfor="lowerLeg">LOWER LEG</label><br>
+        <input type="checkbox" name="injuryZone" id="ankle"><label expand-labelfor="ankle">ANKLE</label><br>
+        <input type="checkbox" name="injuryZone" id="foot"><label expand-labelfor="foot">FOOT</label>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="injuryZone" id="hip"><label expand-labelfor="hip">HIP</label><br>
+        <input type="checkbox" name="injuryZone" id="abdomen"><label expand-labelfor="abdomen">ABDOMEN</label><br>
+        <input type="checkbox" name="injuryZone" id="chest"><label expand-labelfor="chest">CHEST</label><br>
+        <input type="checkbox" name="injuryZone" id="back"><label expand-labelfor="back">BACK</label><br>
+        <input type="checkbox" name="injuryZone" id="neck"><label expand-labelfor="neck">NECK</label><br>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="injuryZone" id="shoulder"><label expand-labelfor="shoulder">SHOULDER</label><br>
+        <input type="checkbox" name="injuryZone" id="arm"><label expand-labelfor="arm">ARM</label><br>
+        <input type="checkbox" name="injuryZone" id="wrist"><label expand-labelfor="wrist">WRIST</label><br>
+        <input type="checkbox" name="injuryZone" id="hand"><label expand-labelfor="hand">HAND</label><br>
+        <input type="checkbox" name="injuryZone" id="thumb"><label expand-labelfor="thumb">THUMB</label><br>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="injuryZone" id="head"><label expand-labelfor="head">HEAD</label><br>
+        <input type="checkbox" name="injuryZone" id="face"><label expand-labelfor="face">FACE</label><br>
+        <input type="checkbox" name="injuryZone" id="eye"><label expand-labelfor="eye">EYE</label><br>
+        <input type="checkbox" name="injuryZone" id="nose"><label expand-labelfor="nose">NOSE</label><br>
+        <input type="checkbox" name="injuryZone" id="mouth"><label expand-labelfor="mouth">MOUTH</label><br>
+    </div>
+    <div class="col-3 top">
+        <input type="checkbox" name="injuryZone" id="teeth"><label expand-labelfor="teeth">TEETH</label><br>
+        <input type="checkbox" name="injuryZone" id="internal"><label expand-labelfor="internal">INTERNAL INJURY</label><br>
+        <input type="checkbox" name="injuryZone" id="zoneOther"><label expand-labelfor="zoneOther">OTHER:</label><br>
+        <span id="injuryZoneOther"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-4">
+    <div class="col-2 br">
+        <span class="textCenter middle">FIRST AID RENDERED</span>
+    </div>
+    <div class="col-17 height-2 top">
+        <div class="col-10 br top">
+            <span class="textCenter center bold ul">ON HILL:</span><br>
+            <span id="hillFirstAid"></span><br>
+        </div>
+        <div class="col-9 top">
+            <span class="textCenter center bold ul">AT FIRST AID STATION:</span><br>
+            <span id="patrolRoomAid"></span><br>
+        </div>
+        <br><span class="bottom-4"> I REFUSE FIRST AID: INJURED'S (Parent/guardian if minor): __________________________________________________________</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-3">
+    <div class="col-2 br">
+        <span class="textCenter center middle">PATROLLERS</span>
+    </div>
+    <div class="col-6 br top">
+        <span class="textCenter center bold ul">AT SCENE:</span><br>
+        <span id="scenePatrollers"></span>
+    </div>
+    <div class="col-5 br top">
+        <span class="textCenter center bold ul">TRANSPORTING:</span><br>
+        <span id="transportPatrollers"></span>
+    </div>
+    <div class="col-6 top">
+        <span class="textCenter center bold ul">AT FIRST AID STATION:</span><br>
+        <span id="aidPatrollers"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-3">
+    <div class="col-2 br">
+        <span class="textCenter middle">TRANSPORT & DESTINATION</span>
+    </div>
+    <div class="col-2 br grey">
+        <span class="textCenter middle">ARRIVED AT FIRST AID STATION BY</span>
+    </div>
+    <div class="col-4 br top">
+        <input type="checkbox" name="arrive" id="patrol"><label expand-labelfor="patrol">PATROL/TOBOGGAN</label><br>
+        <input type="checkbox" name="arrive" id="walkIn"><label expand-labelfor="walkIn">WALK-IN</label><br>
+        <input type="checkbox" name="arrive" id="arriveOther"><label expand-labelfor="arriveOther">OTHER: </label>
+        <span id="otherArrive"></span>
+    </div>
+    <div class="col-2 br grey">
+        <span class="textCenter middle">LEFT FIRST AID STATION BY</span>
+    </div>
+    <div class="col-3 br top">
+        <input type="checkbox" name="leave" id="ambulance"><label expand-labelfor="ambulance">AMBULANCE</label><br>
+        <input type="checkbox" name="leave" id="car"><label expand-labelfor="car">CAR/BUS</label><br>
+        <input type="checkbox" name="leave" id="walkOut"><label expand-labelfor="walkOut">WALKING OUT </label>
+    </div>
+    <div class="col-5 top">
+        <span class=" bold ul">DESTINATION:</span>
+        <input type="checkbox" name="dest" id="home"><label expand-labelfor="home">HOME</label>
+        <input type="checkbox" name="dest" id="lodge"><label expand-labelfor="lodge">LODGE</label><br>
+        <input type="checkbox" name="dest" id="returnSki"><label expand-labelfor="returnSki">RETURN TO SKIING/RIDING</label><br>
+        <input type="checkbox" name="dest" id="destOther"><label expand-labelfor="destOther">OTHER: </label>
+        <span id="otherDest"></span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-6">
+    <div class="col-2 br">
+        <span class="textCenter middle">SITE CONDITIONS</span></div>
+    <div class="col-6 br top">
+        <span class="textCenter center bold ul">SURFACE AT SCENE:</span><br>
+        <div class="col-9 top">
+            <input type="checkbox" name="surface" id="powder"><label expand-labelfor="powder">POWDER</label><br>
+            <input type="checkbox" name="surface" id="packedPowder"><label expand-labelfor="PackedPowder">PACKED-POWDER</label><br>
+            <input type="checkbox" name="surface" id="hardPacked"><label expand-labelfor="hardPacked">HARD-PACKED</label><br>
+            <input type="checkbox" name="surface" id="variable"><label expand-labelfor="variable">VARIABLE</label>
+        </div>
+        <div class="col-9 top">
+            <input type="checkbox" name="surface" id="corn"><label expand-labelfor="corn">CORN</label><br>
+            <input type="checkbox" name="surface" id="loose"><label expand-labelfor="loose">LOOSE GRAIN</label><br>
+            <input type="checkbox" name="surface" id="wet"><label expand-labelfor="wet">WET</label><br>
+            <input type="checkbox" name="surface" id="other"><label expand-labelfor="other">OTHER: </label>
+            <span id="surfaceConditionsOther"></span>
+        </div>
+    </div>
+    <div class="col-5 br top">
+        <span class="textCenter center bold ul">VISIBILITY:</span><br>
+        <div class="col-9 top">
+            <input type="checkbox" name="visibility" id="clear"><label expand-labelfor="clear">CLEAR</label><br>
+            <input type="checkbox" name="visibility" id="overcast"><label expand-labelfor="overcast">OVERCAST</label><br>
+            <input type="checkbox" name="visibility" id="fog"><label expand-labelfor="fog">FOG</label>
+        </div>
+        <div class="col-9 top">
+            <input type="checkbox" name="visibility" id="snowing"><label expand-labelfor="snowing">SNOWING</label><br>
+            <input type="checkbox" name="visibility" id="raining"><label expand-labelfor="raining">RAINING</label><br>
+        </div>
+        <input type="checkbox" name="visibility" id="snowmaking"><label expand-labelfor="snowmaking">SMOWMAKING NEAR SCENE</label>
+    </div>
+    <div class="col-3 br top">
+        <span class="textCenter center bold ul">TEMPERATURE:</span><br>
+        <input type="checkbox" name="temp" id="below0"><label expand-labelfor="below0">BELOW 0</label><br>
+        <input type="checkbox" name="temp" id="zero32"><label expand-labelfor="zero32">0 - 32</label><br>
+        <input type="checkbox" name="temp" id="above32"><label expand-labelfor="above32">ABOVE 32</label>
+    </div>
+    <div class="col-3 top">
+        <span class="textCenter center bold ul">WIND:</span><br>
+        <input type="checkbox" name="wind" id="calm"><label expand-labelfor="calm">CALM</label><br>
+        <input type="checkbox" name="wind" id="moderate"><label expand-labelfor="moderate">MODERATE</label><br>
+        <input type="checkbox" name="wind" id="high"><label expand-labelfor="high">HIGH</label>
+    </div>
+</div>
+<div class="grid-x grid-padding-x">
+    <div class="col-2 br height-4">
+        <span class="textCenter center middle">WITNESSES None Identified</span>
+        <input type="checkbox" class="center bottom-4" id="noWitness">
+    </div>
+    <div class="col-17 top" id="witnesses"></div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-2">
+    <div class="col-13 top">
+        <br>
+        <span>NAME OF INDIVIDUAL COMPLETING REPORT: </span> <span id="reportCompleter"></span>
+        <br>
+        <span>SIGNATURE: ___________________________________________________</span><br>
+        <br><span>MG02 - 11/15 :: Bates v.4.0.0</span>
+    </div>
+    <div class="col-6 top">
+        <br>
+        <span>DATE REPORT COMPLETED: </span> <span id="dateComplete"></span>
+    </div>
+</div>
+<!-- SCRIPTS -->
+<script src="/public/javascripts/results.js"></script>
+</body>
+</html>

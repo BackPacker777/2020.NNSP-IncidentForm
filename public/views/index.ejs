@@ -1,0 +1,94 @@
+<% include public/views/header.ejs %>
+<% include public/views/no_print.ejs %>
+
+<div id="tipTop">
+    <div class="grid-container fluid">
+        <div class="grid-x grid-padding-x black">
+            <div class="small-12 cell text-center">
+                <h5><strong>NNSP Incident Form - 2020</strong></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="topMast">
+    <div class="grid-container fluid">
+        <div class="grid-x grid-padding-x">
+            <div class="small-5 cell"><input type='submit' id='submit' value='Print Form' class="button large expanded success border"></div>
+            <div class="small-2 cell text-center"><img src="public/images/NSP_Logo.png" alt="NSP Logo" id="nspLogo" width="80" height="100" class="glow"></div>
+            <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset1" value="Start New"></div>
+        </div>
+    </div>
+</div>
+<div class="grid-container fluid">
+	<form id="mainForm" action="javascript:0">
+        <fieldset id="dateTime">
+            <legend><strong>Date &amp; Time</strong></legend>
+            <div class="grid-x grid-padding-x">
+                <div class="small-4 cell">
+                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Incident Time</span><br>
+                    <input name="incidentTime" id="incidentTime" type="time" autofocus required class="exposer">
+                </div>
+                <div class="small-4 cell">
+                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Day</span><br>
+                    <input name="day" id="day" type="text" required>
+                </div>
+                <div class="small-4 cell">
+                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Date</span><br>
+                    <input name="date" id="date" type="text" required>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+
+        <div id="personalInfo">
+			<% include public/views/personal_info.ejs %>
+        </div>
+        <br>
+
+        <div id="patientHistory">
+			<% include public/views/patient_history.ejs %>
+        </div>
+        <br>
+
+        <div id="locationsHistory">
+			<% include public/views/locations_history.ejs %>
+        </div>
+        <br>
+
+        <div id="equipment">
+			<% include public/views/equipment.ejs %>
+        </div>
+        <br>
+
+        <div id="incidentDescriptionConditions">
+			<% include public/views/incidentDesc_conditions.ejs %>
+        </div>
+        <br>
+
+        <div id="injuryData">
+			<% include public/views/injury_data.ejs %>
+        </div>
+        <br>
+
+        <div id="firstAidPatrollersTransport">
+			<% include public/views/firstAid_patrollers_transDest.ejs %>
+        </div>
+        <br>
+
+        <div id="witnessCompleter">
+			<% include public/views/witness_completer.ejs %>
+        </div>
+
+        <fieldset id="buttons">
+            <div class="grid-x grid-padding-x">
+                <div class="small-10 cell">
+                    <input type='submit' id='submit' value='Completed!' class="button large">
+                </div>
+                <div class="small-1 cell align-right">
+                    <input type="reset" class="button large alert" id="reset2" value="Reset Form">
+                </div>
+            </div>
+        </fieldset>
+	</form>
+</div>
+<% include public/views/footer.ejs %>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="NNSP Incident Report App">
+    <title>NNSP Ski Rental Form</title>
+    <link href="/public/css/results.css" rel="stylesheet">
+</head>
+<body>
+<div class="grid-x grid-padding-x height-3">
+    <div class="col-20">
+        <span class="textCenter center h4">NUB'S NOB POST INCIDENT EQUIPMENT INSPECTION REPORT:</span><br>
+        <br><span class="textCenter center h4">SKI EQUIPMENT</span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-3">
+        <span class="middle">INCIDENT DATE:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="incidentDate"></span>
+    </div>
+    <div class="col-3">
+        <span class="middle">DAY OF WEEK:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="day"></span>
+    </div>
+    <div class="col-3">
+        <span class="middle">TIME OF INCIDENT:</span>
+    </div>
+    <div class="col-3">
+        <span class="middle" id="incidentTime"></span>
+    </div>
+</div>
+<br>
+<div class="grid-x grid-padding-x-noBottom height-5">
+    <div class="col-2 br">
+        <span class="textCenter middle center">SKIER INFORMATION</span>
+    </div>
+    <div class="col-17 top">
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-9 top">
+                <br><span>NAME: </span><span id="firstName"></span> <span id="lastName"></span>
+            </div>
+            <div class="col-9 top">
+                <br><span> CONTRACT NAME: </span><span id="contractName"></span>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-17 top">
+                <span>NATURE OF INJURY: </span><span id="injuryNature"></span>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-5 top">
+                <input type="checkbox" name="gender" id="male"><label expand-labelfor="male">MALE </label> <input type="checkbox" name="gender" id="female"><label expand-labelfor="female">FEMALE</label>
+            </div>
+            <div class="col-4 top">
+                <span> HT: </span><span id="height"></span>
+            </div>
+            <div class="col-4 top">
+                <span> WT: </span><span id="weight"></span>
+            </div>
+            <div class="col-4 top">
+                <span> AGE: </span><span id="age"></span>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x-noBorder">
+            <div class="col-4 top">
+                <span>SKIER TYPE:</span>
+            </div>
+            <div class="col-4 top">
+                <input type="checkbox" name="ability" id="beginner"><label expand-labelfor="beginner">TYPE I </label>
+            </div>
+            <div class="col-4 top">
+                <input type="checkbox" name="ability" id="intermediate"><label expand-labelfor="intermediate">TYPE II</label>
+            </div>
+            <div class="col-4 top">
+                <input type="checkbox" name="ability" id="advanced"><label expand-labelfor="advanced">TYPE III</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-25">
+    <div class="col-2 br">
+        <span class="textCenter middle center">EQUIPMENT INFORMATION</span>
+    </div>
+    <div class="col-7 top">
+        <br><span>SKI MAKE:_________________________</span><br><br>
+        <span>SHOP #: </span> <span id="skiNum"></span><br><br>
+        <span>BOOT MAKE:_______________________</span><br><br>
+        <span>SOLE LENGTH (MM):_________________</span><br><br>
+        <span>BINDING MAKE: </span><span id="bindingMake"></span><br><br>
+        <span>LEFT DIN:</span><br><br>
+        <span>TOE: </span><span id="leftDinToe"></span><br><br>
+        <span>HEEL: </span><span id="leftDinHeel"></span>
+    </div>
+    <div class="col-7 top">
+        <br><span>SKI MODEL:_________________________</span><br><br>
+        <span>SERIAL NUM:________________________</span><br><br>
+        <span>BOOT MODEL:_______________________</span><br><br>
+        <span>BOOT SHOP #: </span> <span id="bootNum"></span><br><br>
+        <span>BINDING MODEL: </span><span id="bindingModel"></span><br><br>
+        <span>RIGHT DIN:</span><br><br>
+        <span>TOE: </span><span id="rightDinToe"></span><br><br>
+        <span>HEEL: </span><span id="rightDinHeel"></span>
+    </div>
+    <div class="col-3 top">
+        <br><span>LENGTH:______________</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-41">
+    <div class="col-2 br">
+        <span class="textCenter middle center">RIGHT SKI/BOOT/ BINDING INSPECTION & TESTS</span>
+    </div>
+    <div class="col-10 top height-1">
+        <span>BOOT SOLE WITHIN INDUSTRY NORM STANDARDS? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>ALL BOOT PARTS PRESENT, WORKING CORRECTLY? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>VISUAL INDICATOR SETTINGS: TOE_______  HEEL_______</span>
+        <br><br><span>TOE WINGS SET CORRECTLY? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO </span><input type="checkbox"><span>N/A</span>
+        <br><br><span>TOE HEIGHT CORRECT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO </span><input type="checkbox"><span>N/A</span>
+        <br><br><span>BRAKE FULLY FUNCTIONAL? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>SKI DAMAGED (BENT< BROKEN, ETC.)? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>SYSTEM PASSES VISUAL INSPECTIONS? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>CLOCKWISE TWIST MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+        <br><br><span>COUNTERCLOCKWISE MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+        <br><br><span>FORWARD LEAN MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+    </div>
+    <div class="col-7 top height-1">
+        <br><br><span>AFD PRESENT & INTACT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>FORWARD PRESSURE CORRECT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBottom height-41">
+    <div class="col-2 br">
+        <span class="textCenter middle center">LEFT SKI/BOOT/ BINDING INSPECTION & TESTS</span>
+    </div>
+    <div class="col-10 top height-1">
+        <span>BOOT SOLE WITHIN INDUSTRY NORM STANDARDS? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>ALL BOOT PARTS PRESENT, WORKING CORRECTLY? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>VISUAL INDICATOR SETTINGS: TOE_______  HEEL_______</span>
+        <br><br><span>TOE WINGS SET CORRECTLY? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO </span><input type="checkbox"><span>N/A</span>
+        <br><br><span>TOE HEIGHT CORRECT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO </span><input type="checkbox"><span>N/A</span>
+        <br><br><span>BRAKE FULLY FUNCTIONAL? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>SKI DAMAGED (BENT< BROKEN, ETC.)? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>SYSTEM PASSES VISUAL INSPECTIONS? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>CLOCKWISE TWIST MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+        <br><br><span>COUNTERCLOCKWISE MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+        <br><br><span>FORWARD LEAN MECHANICAL TEST RESULTS:  _____ . _____ . _____</span>
+    </div>
+    <div class="col-7 top height-1">
+        <br><br><span>AFD PRESENT & INTACT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+        <br><br><span>FORWARD PRESSURE CORRECT? </span><input type="checkbox"><span>YES </span><input type="checkbox"><span>NO</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x height-5">
+    <div class="col-2 br">
+        <span class="textCenter middle center">SHOP INFORMATION</span>
+    </div>
+    <div class="col-11 top height-1">
+        <br><span>SHOP WHERE EQUIPMENT WAS RENTED: ______________________________</span>
+        <br><br><span>SHOP WHERE EQUIPMENT WAS INSPECTED: ______________________________</span>
+        <br><br><span>TESTING DEVICE BRAND: ____________________________________</span>
+    </div>
+    <div class="col-5 top height-1">
+        <br><br><br><br><br><span>MODEL: _______________________</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-20">
+        <br><span>NAME OF TECHNICIAN COMPLETING INSPECTION & REPORT:_____________________________________________________________</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-9">
+        <span>SIGNATURE:___________________________________________</span>
+    </div>
+    <div class="col-9">
+        <span>DATE: <span id="date"></span> </span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x-noBorder height-1">
+    <div class="col-5">
+        <span>MG17 - 11/06 :: Bates v.3.1.10</span>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="/public/javascripts/rentalResult.js"></script>
+</body>
+</html>

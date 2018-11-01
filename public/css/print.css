@@ -1,0 +1,80 @@
+@media print {
+	body {
+		font-size: 9px;
+		margin: 0;
+	}
+
+	h4 {
+		margin-bottom: -19px;
+	}
+
+	fieldset {
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
+	.label {
+		font-size: 9px;
+		font-weight: bold;
+	}
+
+	.small-1 {
+		width: 8.33333%;
+	}
+
+	.small-2 {
+		width: 16.66667%;
+	}
+
+	.small-3 {
+		width: 25%;
+	}
+
+	.small-4 {
+		width: 33.33333%;
+	}
+
+	.small-5 {
+		width: 41.66667%;
+	}
+
+	.small-6 {
+		width: 50%;
+	}
+
+	.small-7 {
+		width: 58.33333%;
+	}
+
+	.small-8 {
+		width: 66.66667%;
+	}
+
+	.small-9 {
+		width: 75%;
+	}
+
+	.small-10 {
+		width: 83.33333%;
+	}
+
+	.small-11 {
+		width: 91.66667%;
+	}
+
+	.small-12 {
+		width: 100%;
+	}
+
+     .fullWidth {
+	     width: 100%;
+	     margin: 0 auto -30px 0;
+	     max-width: initial;
+     }
+
+	.columns {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+}
