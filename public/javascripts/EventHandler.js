@@ -54,8 +54,15 @@ export default class EventHandler {
     }
 
     handleIncidentTimeExpose() {
-        document.getElementById("incidentTime").addEventListener("blur", () => {
+        document.getElementById("incidentTime").addEventListener("change", () => {
             FadeStuff.doFade('in', 'personalInfo');
+            document.getElementById("lastName").focus();
+            FadeStuff.doAccordian('open', 'dtExpand');
+            FadeStuff.doAccordian('close', 'dateTime');
+            document.getElementById('expandDT').addEventListener("click", () => {
+                document.getElementById('dtExpand').style.display = 'none';
+                FadeStuff.doAccordian('open', 'dateTime');
+            });
         });
     }
 

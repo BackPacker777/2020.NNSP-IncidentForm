@@ -25,4 +25,28 @@ export default class FadeStuff {
             })();
         }
     }
+
+    static doAccordian(state, fadeWhat) {
+        let div = document.getElementById(fadeWhat);
+        if (state === "open") {
+            div.style.opacity = 0;
+            div.style.display = 'block';
+            (function fade() {
+                let val = parseFloat(div.style.opacity);
+                if (!((val += .01) >= 1)) {
+                    div.style.opacity = val;
+                    requestAnimationFrame(fade);
+                }
+            })();
+        } else if (state === "close") {
+            div.style.opacity = 1;
+            (function fade() {
+                if ((div.style.opacity -= .01) <= 0) {
+                    div.style.display = 'none';
+                } else {
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+    }
 }

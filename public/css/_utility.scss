@@ -33,6 +33,24 @@
   width: 100%;
 }
 
+.expander {
+  background-color: rgba(191,191,191,0.70);
+  margin-top: 20px;
+}
+
+.expanderFont {
+  font-size: 40px;
+}
+
+.fa-plus:hover {
+  font-size: 50px;
+  transition: all 0.1s ease-in;
+  /*border-radius: 6px;
+  transition: all 0.1s ease-in;
+  box-shadow: 0 0 10px 0 rgba(23,121,186,0.67);*/
+  cursor: pointer;
+}
+
 legend {
   width: 100%;
   background-color: #bfbfbf;

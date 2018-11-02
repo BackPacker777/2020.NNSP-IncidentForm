@@ -19,6 +19,7 @@ class main {
         document.getElementById('noPrint').style.display = 'none';
 
         // document.getElementById('dateTime').style.visibility = 'hidden';
+        document.getElementById('dtExpand').style.display = 'none';
         document.getElementById('personalInfo').style.visibility = 'hidden';
         document.getElementById('patientHistory').style.visibility = 'hidden';
         document.getElementById('locationsHistory').style.visibility = 'hidden';
