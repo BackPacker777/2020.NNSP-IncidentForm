@@ -12,16 +12,21 @@ class main {
         this.fullDate = `${this.month}/${this.day}/${this.year}`;
         this.populateDate();
         this.eventHandler = new EventHandler(this.year, this.month, this.day);
+        document.getElementById('dateTime').style.display = 'none';
         main.prepApp();
     }
 
     static prepApp() {
         document.getElementById('noPrint').style.display = 'none';
+        document.getElementById('dateTime').style.display = 'flex';
+        document.getElementById('dtSymbol').innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
+        document.getElementById('personalInfo').style.display = 'none';
+        document.getElementById('ipSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('patientHistory').display = 'none';
+        document.getElementById('phSymbol').innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
+        // document.getElementById('dtExpand').style.display = 'none';
 
-        // document.getElementById('dateTime').style.visibility = 'hidden';
-        document.getElementById('dtExpand').style.display = 'none';
-        document.getElementById('personalInfo').style.visibility = 'hidden';
-        document.getElementById('patientHistory').style.visibility = 'hidden';
+        // document.getElementById('patientHistory').style.visibility = 'hidden';
         document.getElementById('locationsHistory').style.visibility = 'hidden';
         document.getElementById('equipment').style.visibility = 'hidden';
         document.getElementById('incidentDescriptionConditions').style.visibility = 'hidden';

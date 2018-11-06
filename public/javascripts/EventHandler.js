@@ -7,8 +7,9 @@ export default class EventHandler {
         this.loadZipData();
         this.loadHills();
         this.loadLifts();
-        this.handleIncidentTimeExpose();
-        this.handleOccupationExpose();
+        this.handleDtSymbolClick();
+        this.handleIpSymbolClick();
+        this.handlePhSymbolClick();
         this.handleTicketTypeExpose();
         this.handleEquipmentRemovalExpose();
         this.handleVideoExpose();
@@ -53,23 +54,49 @@ export default class EventHandler {
         });
     }
 
-    handleIncidentTimeExpose() {
+    handleDtSymbolClick() {
         document.getElementById("incidentTime").addEventListener("change", () => {
-            FadeStuff.doFade('in', 'personalInfo');
-            document.getElementById("lastName").focus();
-            FadeStuff.doAccordian('open', 'dtExpand');
-            FadeStuff.doAccordian('close', 'dateTime');
-            document.getElementById('expandDT').addEventListener("click", () => {
-                document.getElementById('dtExpand').style.display = 'none';
-                FadeStuff.doAccordian('open', 'dateTime');
-            });
+            this.doSymbolClicks('personalInfo', 'ipSymbol', true);
+        });
+        document.getElementById("dtSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('dateTime', 'dtSymbol', false);
         });
     }
 
-    handleOccupationExpose() {
-        document.getElementById("occupation").addEventListener("focus", () => {
-            FadeStuff.doFade('in', 'patientHistory');
+    handleIpSymbolClick() {
+        document.getElementById("occupation").addEventListener("change", () => {
+            this.doSymbolClicks('patientHistory', 'ipSymbol', true);
         });
+        document.getElementById("ipSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('personalInfo', 'ipSymbol', false);
+        });
+    }
+
+    handlePhSymbolClick() {
+        document.getElementById("ticketType").addEventListener("change", () => {
+            this.doSymbolClicks('locationsHistory', 'phSymbol', true);
+        });
+        document.getElementById("phSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('patientHistory', 'phSymbol', false);
+        });
+    }
+
+    doSymbolClicks(whichDiv, whichSymbol, fade) {
+        if (document.getElementById(whichDiv).style.display === 'flex') {
+            document.getElementById(whichSymbol).innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+            if (fade) {
+                FadeStuff.doAccordian('close', whichDiv);
+            } else {
+                document.getElementById(whichDiv).style.display = 'none';
+            }
+        } else {
+            document.getElementById(whichSymbol).innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
+            if (fade) {
+                FadeStuff.doAccordian('open', whichDiv);
+            } else {
+                document.getElementById(whichDiv).style.display = 'flex';
+            }
+        }
     }
 
     handleTicketTypeExpose() {
