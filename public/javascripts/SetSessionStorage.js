@@ -165,7 +165,7 @@ export default class SetSessionStorage {
         }
 
         //INCIDENT DESCRIPTION---------------------------------------------------------------------------------------------
-        sessionStorage.setItem('incidentDescription', document.getElementById('incidentDescription').value);
+        sessionStorage.setItem('incidentDescription', document.getElementById('incidentDescriptionText').value);
         sessionStorage.setItem('statementTaker', document.getElementById('statementTaker_0').value);
 
         //PROBABLE INJURY--------------------------------------------------------------------------------------------------

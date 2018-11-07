@@ -30,7 +30,7 @@ export default class FadeStuff {
         let div = document.getElementById(fadeWhat);
         if (state === "open") {
             div.style.opacity = 0;
-            div.style.display = 'flex';
+            div.style.display = 'block';
             (function fade() {
                 let val = parseFloat(div.style.opacity);
                 if (!((val += .01) >= 1)) {

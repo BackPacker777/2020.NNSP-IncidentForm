@@ -3,45 +3,50 @@ import EventHandler from './EventHandler.js';
 
 class main {
     constructor() {
-        let date = new Date();
-        this.date = date;
+        // let date = new Date();
+        this.date = new Date();
         this.month = this.date.getMonth() + 1;
         this.day = this.date.getDate();
         this.year = this.date.getFullYear();
         this.weekday = this.date.getDay();
         this.fullDate = `${this.month}/${this.day}/${this.year}`;
         this.populateDate();
-        this.eventHandler = new EventHandler(this.year, this.month, this.day);
-        document.getElementById('dateTime').style.display = 'none';
+        new EventHandler(this.year, this.month, this.day);
         main.prepApp();
     }
 
     static prepApp() {
         document.getElementById('noPrint').style.display = 'none';
-        document.getElementById('dateTime').style.display = 'flex';
+        document.getElementById('submit').disabled = true;
+
+        document.getElementById('dateTime').style.display = 'block';
         document.getElementById('dtSymbol').innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
-        document.getElementById('personalInfo').style.display = 'none';
+        document.getElementById('injuredPerson').style.display = 'none';
         document.getElementById('ipSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
-        document.getElementById('patientHistory').display = 'none';
-        document.getElementById('phSymbol').innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
-        // document.getElementById('dtExpand').style.display = 'none';
-
-        // document.getElementById('patientHistory').style.visibility = 'hidden';
-        document.getElementById('locationsHistory').style.visibility = 'hidden';
-        document.getElementById('equipment').style.visibility = 'hidden';
-        document.getElementById('incidentDescriptionConditions').style.visibility = 'hidden';
-        document.getElementById('injuryData').style.visibility = 'hidden';
-        document.getElementById('firstAidPatrollersTransport').style.visibility = 'hidden';
-        document.getElementById('witnessCompleter').style.visibility = 'hidden';
-        document.getElementById('buttons').style.visibility = 'hidden';
-        // main.setRequired();
-    }
-
-    static setRequired() {
-        let required = document.getElementById('mainForm').querySelectorAll('[required]');
-        for (let element of required) {
-            element.style.backgroundColor = 'yellow';
-        }
+        document.getElementById('patientHistory').style.display = 'none';
+        document.getElementById('phSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('location').style.display = 'none';
+        document.getElementById('loSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('skiingHistory').style.display = 'none';
+        document.getElementById('shSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('equipment').style.display = 'none';
+        document.getElementById('eqSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('incidentDescription').style.display = 'none';
+        document.getElementById('idSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('siteConditions').style.display = 'none';
+        document.getElementById('scSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('injuryData').style.display = 'none';
+        document.getElementById('jdSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('firstAid').style.display = 'none';
+        document.getElementById('faSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('patrollers').style.display = 'none';
+        document.getElementById('ptSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('transport').style.display = 'none';
+        document.getElementById('tdSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('witnesses').style.display = 'none';
+        document.getElementById('wtSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
+        document.getElementById('completer').style.display = 'none';
+        document.getElementById('rcSymbol').innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
     }
 
     populateDate() {

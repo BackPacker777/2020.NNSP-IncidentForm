@@ -1,6 +1,5 @@
 <% include public/views/header.ejs %>
 <% include public/views/no_print.ejs %>
-<!--
 <div id="tipTop">
     <div class="grid-container fluid">
         <div class="grid-x grid-padding-x black">
@@ -15,13 +14,12 @@
         <div class="grid-x grid-padding-x">
             <div class="small-5 cell"><input type='submit' id='submit' value='Print Form' class="button large expanded success border"></div>
             <div class="small-2 cell text-center"><img src="public/images/NSP_Logo.png" alt="NSP Logo" id="nspLogo" width="80" height="100" class="glow"></div>
-            <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset1" value="Start New"></div>
+            <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset" value="Start New"></div>
         </div>
     </div>
 </div>
--->
 
-<div id="tipTop">
+<!--<div id="tipTop">
     <div class="grid-container fluid">
         <div class="grid-x grid-padding-x black">
             <div class="small-12 cell text-center">
@@ -35,95 +33,183 @@
         <div class="grid-x grid-padding-x">
             <div class="small-5 cell"><input type='submit' id='submit' value='Print Form' class="button large expanded success border"></div>
             <div class="small-2 cell text-center"><img src="public/images/warn.png" alt="warn" id="nspLogo" width="80" height="100" class="glow"></div>
-            <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset1" value="Start New"></div>
+            <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset" value="Start New"></div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div class="grid-container fluid">
-	<form id="mainForm" action="javascript:0">
+	<!--<form id="mainForm" action="javascript:0">-->
+    <form id="mainForm">
         <fieldset>
             <div class="grid-x grid-padding-x expander">
                 <div class="small-9 cell vertical-center"><h6><strong>Date &amp; Time</strong></h6></div>
                 <div class="small-2 cell vertical-center"></div>
                 <div class="small-1 cell vertical-center" id="dtSymbol"></div>
             </div>
-            <div class="grid-x grid-padding-x" id="dateTime">
-                <div class="small-4 cell">
-                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Incident Time</span><br>
-                    <input name="incidentTime" id="incidentTime" type="time" autofocus required class="exposer">
-                </div>
-                <div class="small-4 cell">
-                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Day</span><br>
-                    <input name="day" id="day" type="text" required>
-                </div>
-                <div class="small-4 cell">
-                    <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Date</span><br>
-                    <input name="date" id="date" type="text" required>
-                </div>
+            <div id="dateTime">
+                <% include public/views/dateTime.ejs %>
             </div>
         </fieldset>
         <br>
 
-        <div class="grid-x grid-padding-x expander">
-            <div class="small-9 cell vertical-center"><h6><strong>Injured Person</strong></h6></div>
-            <div class="small-2 cell vertical-center"></div>
-            <div class="small-1 cell vertical-center" id="ipSymbol"></div>
-        </div>
-        <div id="personalInfo">
-			<% include public/views/personal_info.ejs %>
-        </div>
-        <br>
-
-        <div class="grid-x grid-padding-x expander">
-            <div class="small-9 cell vertical-center"><h6><strong>Patient History</strong></h6></div>
-            <div class="small-2 cell vertical-center"></div>
-            <div class="small-1 cell vertical-center" id="phSymbol"></div>
-        </div>
-        <div id="patientHistory">
-			<% include public/views/patient_history.ejs %>
-        </div>
-        <br>
-
-        <div id="locationsHistory">
-			<% include public/views/locations_history.ejs %>
-        </div>
-        <br>
-
-        <div id="equipment">
-			<% include public/views/equipment.ejs %>
-        </div>
-        <br>
-
-        <div id="incidentDescriptionConditions">
-			<% include public/views/incidentDesc_conditions.ejs %>
-        </div>
-        <br>
-
-        <div id="injuryData">
-			<% include public/views/injury_data.ejs %>
-        </div>
-        <br>
-
-        <div id="firstAidPatrollersTransport">
-			<% include public/views/firstAid_patrollers_transDest.ejs %>
-        </div>
-        <br>
-
-        <div id="witnessCompleter">
-			<% include public/views/witness_completer.ejs %>
-        </div>
-
-        <fieldset id="buttons">
-            <div class="grid-x grid-padding-x">
-                <div class="small-10 cell">
-                    <input type='submit' id='submit' value='Completed!' class="button large">
-                </div>
-                <div class="small-1 cell align-right">
-                    <input type="reset" class="button large alert" id="reset2" value="Reset Form">
-                </div>
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Injured Person</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="ipSymbol"></div>
+            </div>
+            <div id="injuredPerson">
+                <% include public/views/injuredPerson.ejs %>
             </div>
         </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Patient History</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="phSymbol"></div>
+            </div>
+            <div id="patientHistory">
+                <% include public/views/patient_history.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Location</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="loSymbol"></div>
+            </div>
+            <div id="location">
+                <% include public/views/location.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Skiing History</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="shSymbol"></div>
+            </div>
+            <div id="skiingHistory">
+                <% include public/views/skiingHistory.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Equipment</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="eqSymbol"></div>
+            </div>
+            <div id="equipment">
+                <% include public/views/equipment.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Incident Description</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="idSymbol"></div>
+            </div>
+            <div id="incidentDescription">
+                <% include public/views/incidentDescription.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Site Conditions</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="scSymbol"></div>
+            </div>
+            <div id="siteConditions">
+                <% include public/views/siteConditions.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Injury Data</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="jdSymbol"></div>
+            </div>
+            <div id="injuryData">
+                <% include public/views/injury_data.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>First Aid Rendered</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="faSymbol"></div>
+            </div>
+            <div id="firstAid">
+                <% include public/views/firstAid.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Patrollers</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="ptSymbol"></div>
+            </div>
+            <div id="patrollers">
+                <% include public/views/patrollers.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Transport/Destination</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="tdSymbol"></div>
+            </div>
+            <div id="transport">
+                <% include public/views/transport.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Witnesses</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="wtSymbol"></div>
+            </div>
+            <div id="witnesses">
+                <% include public/views/witnesses.ejs %>
+            </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <div class="grid-x grid-padding-x expander">
+                <div class="small-9 cell vertical-center"><h6><strong>Report Completer</strong></h6></div>
+                <div class="small-2 cell vertical-center"></div>
+                <div class="small-1 cell vertical-center" id="rcSymbol"></div>
+            </div>
+            <div id="completer">
+                <% include public/views/completer.ejs %>
+            </div>
+        </fieldset>
+        <br>
+        <br>
+
 	</form>
 </div>
 <% include public/views/footer.ejs %>

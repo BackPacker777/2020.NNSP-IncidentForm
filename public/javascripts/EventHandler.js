@@ -10,11 +10,17 @@ export default class EventHandler {
         this.handleDtSymbolClick();
         this.handleIpSymbolClick();
         this.handlePhSymbolClick();
-        this.handleTicketTypeExpose();
-        this.handleEquipmentRemovalExpose();
-        this.handleVideoExpose();
-        this.handleDescriptionExpose();
-        this.handleDestExpose();
+        this.handleLoSymbolClick();
+        this.handleShSymbolClick();
+        this.handleEqSymbolClick();
+        this.handleIdSymbolClick();
+        this.handleScSymbolClick();
+        this.handleJdSymbolClick();
+        this.handleFaSymbolClick();
+        this.handlePtSymbolClick();
+        this.handleTdSymbolClick();
+        this.handleWtSymbolClick();
+        this.handleRcSymbolClick();
 
         this.calculateAge(year, month, day);
         this.handlePatientZip();
@@ -34,6 +40,7 @@ export default class EventHandler {
         this.handlePatrollers("reportCompleter", 0);
         this.handleSubmit();
         this.handleReset();
+        this.validateListen();
     }
 
     loadZipData() {
@@ -56,7 +63,7 @@ export default class EventHandler {
 
     handleDtSymbolClick() {
         document.getElementById("incidentTime").addEventListener("change", () => {
-            this.doSymbolClicks('personalInfo', 'ipSymbol', true);
+            this.doSymbolClicks('injuredPerson', 'ipSymbol', true);
         });
         document.getElementById("dtSymbol").addEventListener("click", () => {
             this.doSymbolClicks('dateTime', 'dtSymbol', false);
@@ -64,25 +71,121 @@ export default class EventHandler {
     }
 
     handleIpSymbolClick() {
-        document.getElementById("occupation").addEventListener("change", () => {
-            this.doSymbolClicks('patientHistory', 'ipSymbol', true);
+        document.getElementById("occupation").addEventListener("focus", () => {
+            this.doSymbolClicks('patientHistory', 'phSymbol', true);
         });
         document.getElementById("ipSymbol").addEventListener("click", () => {
-            this.doSymbolClicks('personalInfo', 'ipSymbol', false);
+            this.doSymbolClicks('injuredPerson', 'ipSymbol', false);
         });
     }
 
     handlePhSymbolClick() {
-        document.getElementById("ticketType").addEventListener("change", () => {
-            this.doSymbolClicks('locationsHistory', 'phSymbol', true);
+        document.getElementById("ticketType").addEventListener("focus", () => {
+            this.doSymbolClicks('location', 'loSymbol', true);
         });
         document.getElementById("phSymbol").addEventListener("click", () => {
             this.doSymbolClicks('patientHistory', 'phSymbol', false);
         });
     }
 
+    handleLoSymbolClick() {
+        document.getElementById("specificLocation").addEventListener("focus", () => {
+            this.doSymbolClicks('skiingHistory', 'shSymbol', true);
+        });
+        document.getElementById("loSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('location', 'loSymbol', false);
+        });
+    }
+
+    handleShSymbolClick() {
+        document.getElementById("equipRemoval").addEventListener("click", () => {
+            this.doSymbolClicks('equipment', 'eqSymbol', true);
+        });
+        document.getElementById("shSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('skiingHistory', 'shSymbol', false);
+        });
+    }
+
+    handleEqSymbolClick() {
+        document.getElementById("videoPhoto").addEventListener("click", () => {
+            this.doSymbolClicks('incidentDescription', 'idSymbol', true);
+        });
+        document.getElementById("eqSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('equipment', 'eqSymbol', false);
+        });
+    }
+
+    handleIdSymbolClick() {
+        document.getElementById("incidentDescriptionText").addEventListener("focus", () => {
+            this.doSymbolClicks('siteConditions', 'scSymbol', true);
+        });
+        document.getElementById("idSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('incidentDescription', 'idSymbol', false);
+        });
+    }
+
+    handleScSymbolClick() {
+        document.getElementById("surface").addEventListener("click", () => {
+            this.doSymbolClicks('injuryData', 'jdSymbol', true);
+        });
+        document.getElementById("scSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('siteConditions', 'scSymbol', false);
+        });
+    }
+
+    handleJdSymbolClick() {
+        document.getElementById("probableInjury").addEventListener("click", () => {
+            this.doSymbolClicks('firstAid', 'faSymbol', true);
+        });
+        document.getElementById("jdSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('injuryData', 'jdSymbol', false);
+        });
+    }
+
+    handleFaSymbolClick() {
+        document.getElementById("patrolRoomAid").addEventListener("click", () => {
+            this.doSymbolClicks('patrollers', 'ptSymbol', true);
+        });
+        document.getElementById("faSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('firstAid', 'faSymbol', false);
+        });
+    }
+
+    handlePtSymbolClick() {
+        document.getElementById("aidRoomPatrollers").addEventListener("click", () => {
+            this.doSymbolClicks('transport', 'tdSymbol', true);
+        });
+        document.getElementById("ptSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('patrollers', 'ptSymbol', false);
+        });
+    }
+
+    handleTdSymbolClick() {
+        document.getElementById("destination").addEventListener("click", () => {
+            this.doSymbolClicks('witnesses', 'wtSymbol', true);
+        });
+        document.getElementById("tdSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('transport', 'tdSymbol', false);
+        });
+    }
+
+    handleWtSymbolClick() {
+        document.getElementById("addWitness").addEventListener("click", () => {
+            this.doSymbolClicks('completer', 'rcSymbol', true);
+        });
+        document.getElementById("wtSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('witnesses', 'wtSymbol', false);
+        });
+    }
+
+    handleRcSymbolClick() {
+        document.getElementById("rcSymbol").addEventListener("click", () => {
+            this.doSymbolClicks('completer', 'rcSymbol', false);
+        });
+    }
+
     doSymbolClicks(whichDiv, whichSymbol, fade) {
-        if (document.getElementById(whichDiv).style.display === 'flex') {
+        if (document.getElementById(whichDiv).style.display === 'block'  && !fade) {
             document.getElementById(whichSymbol).innerHTML = `<i class="fas fa-plus expanderFont float-right"></i>`;
             if (fade) {
                 FadeStuff.doAccordian('close', whichDiv);
@@ -91,48 +194,11 @@ export default class EventHandler {
             }
         } else {
             document.getElementById(whichSymbol).innerHTML = `<i class="fas fa-minus expanderFont float-right"></i>`;
-            if (fade) {
+            if (fade && document.getElementById(whichDiv).style.display !== 'block') {
                 FadeStuff.doAccordian('open', whichDiv);
             } else {
-                document.getElementById(whichDiv).style.display = 'flex';
+                document.getElementById(whichDiv).style.display = 'block';
             }
-        }
-    }
-
-    handleTicketTypeExpose() {
-        document.getElementById("ticketType").addEventListener("focus", () => {
-            FadeStuff.doFade('in', 'locationsHistory');
-        });
-    }
-
-    handleEquipmentRemovalExpose() {
-        for (let element of document.querySelectorAll("input[name='equipmentRemoval']")) {
-            element.addEventListener("focus", () => {
-                FadeStuff.doFade('in', 'equipment');
-            });
-        }
-    }
-
-    handleVideoExpose() {
-        for (let element of document.querySelectorAll("input[name='video']")) {
-            element.addEventListener("focus", () => {
-                FadeStuff.doFade('in', 'incidentDescriptionConditions');
-            });
-        }
-    }
-
-    handleDescriptionExpose() {
-        document.getElementById("incidentDescription").addEventListener("focus", () => {
-            FadeStuff.doFade('in', 'injuryData');
-            FadeStuff.doFade('in', 'firstAidPatrollersTransport');
-        });
-    }
-
-    handleDestExpose() {
-        for (let element of document.querySelectorAll("input[name='dest']")) {
-            element.addEventListener("focus", () => {
-                FadeStuff.doFade('in', 'witnessCompleter');
-            });
         }
     }
 
@@ -443,11 +509,7 @@ export default class EventHandler {
     handleSubmit() {
         document.getElementById("submit").addEventListener("click", () => {
             if (document.getElementById("mainForm").checkValidity()) {
-                //disabled DB functionality until requested
-                /*let data = new FormData(document.querySelector("#mainForm"));
-                this.performAjax("XHR5", data, (response) => {
-                    console.log(response);
-                });*/
+                console.log(`submit button pressed.`);
                 new SetSessionStorage();
                 window.open('/public/views/results.html', '_blank', 'location=yes,height=900,width=1000,scrollbars=yes,status=yes');
                 if (document.getElementById('equipAlpine').checked && document.getElementById('ownerRent').checked || document.getElementById('ownerDemo').checked) {
@@ -456,16 +518,15 @@ export default class EventHandler {
                 if (document.getElementById('helmetRentalYes').checked) {
                     window.open('/public/views/helmetRental.html', '_blank', 'location=yes,height=900,width=900,scrollbars=yes,status=yes');
                 }
+            } else {
+                console.log(`Submit form is broken!`);
             }
             return false;
         });
     }
 
     handleReset() {
-        document.getElementById("reset1").addEventListener("click", () => {
-            window.location.reload();
-        });
-        document.getElementById("reset2").addEventListener("click", () => {
+        document.getElementById("reset").addEventListener("click", () => {
             window.location.reload();
         });
     }
@@ -481,5 +542,26 @@ export default class EventHandler {
                 return callback(XHR.responseText);
             }
         };
+    }
+
+    validateListen() {
+        document.addEventListener('click', () => {
+            this.validateForm();
+        });
+    }
+
+    validateForm() {
+        let form = document.getElementById('mainForm');
+        let valid = true;
+        for (let i = 0; i < form.elements.length; i++) {
+            if (form.elements[i].hasAttribute("required") && form.elements[i].value === "") {
+                valid = false;
+            }
+        }
+        if (valid) {
+            document.getElementById('submit').disabled = false;
+        } else {
+            console.log(`NOT valid yet!`);
+        }
     }
 }
