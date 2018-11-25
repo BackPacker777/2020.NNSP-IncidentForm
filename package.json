@@ -15,5 +15,15 @@
     "ejs": "latest",
     "formidable": "latest",
     "sqlite3": "latest"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackPacker777/2020.NNSP-IncidentForm.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/BackPacker777/2020.NNSP-IncidentForm/issues"
+  },
+  "homepage": "https://github.com/BackPacker777/2020.NNSP-IncidentForm#readme"
 }
