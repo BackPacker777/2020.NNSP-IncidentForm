@@ -1,5 +1,4 @@
 <% include public/views/header.ejs %>
-<% include public/views/no_print.ejs %>
 <div id="tipTop">
     <div class="grid-container fluid">
         <div class="grid-x grid-padding-x black">
@@ -13,7 +12,7 @@
     <div class="grid-container fluid">
         <div class="grid-x grid-padding-x">
             <div class="small-5 cell"><input type='submit' id='submit' value='Print Form' class="button large expanded success border"></div>
-            <div class="small-2 cell text-center"><img src="public/images/NSP_Logo.png" alt="NSP Logo" id="nspLogo" width="80" height="100" class="glow"></div>
+            <div class="small-2 cell text-center"><img src="public/images/NSP_Logo.png" alt="NSP Logo" id="adminButton" width="80" height="100" class="glow"></div>
             <div class="small-5 cell"><input type="reset" class="button large expanded alert border" id="reset" value="Start New"></div>
         </div>
     </div>
@@ -38,7 +37,7 @@
     </div>
 </div>-->
 
-<div class="grid-container fluid">
+<div class="grid-container fluid" id="mainPage">
 	<!--<form id="mainForm" action="javascript:0">-->
     <form id="mainForm">
         <fieldset>
@@ -212,4 +211,8 @@
 
 	</form>
 </div>
+<div id="admin">
+    <% include public/views/admin.ejs %>
+</div>
+<% include public/views/no_print.ejs %>
 <% include public/views/footer.ejs %>

@@ -17,6 +17,7 @@ class main {
 
     static prepApp() {
         document.getElementById('noPrint').style.display = 'none';
+        document.getElementById('admin').style.display = 'none';
         document.getElementById('submit').disabled = true;
 
         document.getElementById('dateTime').style.display = 'block';
