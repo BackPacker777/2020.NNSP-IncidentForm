@@ -1,0 +1,26 @@
+	<div class="grid-x grid-padding-x">
+		<div class="small-3 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Incident Location</span><br>
+			<input name="location" id="locationLift" value="Lift" type="radio" required><label expand-labelfor="locationLift">Lift</label>
+			<input name="location" id="locationHill" value="Hill" type="radio" required><label expand-labelfor="locationHill">Hill</label>
+			<input name="location" id="locationPremise" value="Premise" type="radio" required><label expand-labelfor="locationPremise">Premise</label>
+		</div>
+		<div class="small-2 cell" id="lifts">
+			<span class="label expand-label"> Choose</span><br>
+			<select size="1" class="select" name="whichLift" id="whichLift">
+				<option value="" disabled selected>CHOOSE LIFT</option>
+			</select>
+		</div>
+		<div class="small-2 cell" id="hills">
+			<span class="label expand-label"> Choose</span><br>
+			<select size="1" class="select" name="whichHill" id="whichHill">
+				<option value="" disabled selected>CHOOSE HILL</option>
+			</select>
+		</div>
+		<div class="small-5 cell end">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Specific Location</span><br>
+			<textarea name="specificLocation" id="specificLocation" placeholder="Describe specific location" required></textarea>
+		</div>
+		<input id="hillLift" name="hillLift" type="hidden">
+		<input id="difficulty" name="difficulty" type="hidden">
+	</div>

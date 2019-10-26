@@ -1,0 +1,58 @@
+	<div class="grid-x grid-padding-x">
+		<div class="small-4 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Last Name</span><br>
+			<input name="lastName" id="lastName" placeholder="Last Name" type="text" required>
+		</div>
+		<div class="small-4 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> First Name</span><br>
+			<input name="firstName" id="firstName" placeholder="First Name" type="text" required>
+		</div>
+		<div class="small-2 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Gender</span><br>
+			<input name="gender" id="genderF" value="Female" type="radio" required><label expand-labelfor="genderF">Female</label>
+			<input name="gender" id="genderM" value="Male" type="radio" required><label expand-labelfor="genderM">Male</label>
+		</div>
+		<div class="small-2 cell end">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> DOB</span><br>
+			<input name="dob" id="dob" type="date" min="1910-01-01" max="2030-01-10" required>
+			<input id="age" name="age" type="hidden">
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-2 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Height</span><br>
+			<input name="height" id="height" placeholder="Inches" type="number" required>
+		</div>
+		<div class="small-2 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Weight</span><br>
+			<input name="weight" id="weight"  placeholder="Weight" type="number" required>
+		</div>
+		<div class="small-3 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Street</span><br>
+			<input name="patientStreet" id="patientStreet" placeholder="Street" type="text" required>
+		</div>
+		<div class="small-2 cell">
+			<input id="patientCity" name="patientCity" type="hidden">
+			<input id="patientState" name="patientState" type="hidden">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Zip Code</span><br>
+			<input name="patientZip" id="patientZip" placeholder="Zip Code" type="text" pattern="[0-9]{5}" required>
+		</div>
+		<div class="small-3 cell">
+			<span class="label expand-label"> E-Mail Address</span><br>
+			<input name="email" id="email" type="email" placeholder="Email">
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="small-6 cell">
+			<span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Occupation</span><br>
+			<input name="occupation" id="occupation" placeholder="Occupation" type="text" required>
+		</div>
+		<div class="small-3 cell">
+			<span class="label expand-label"> Home Phone</span><br>
+			<input name="homePhoneNum" id="homePhoneNum" placeholder="Home phone" type="tel"><!--pattern="[\(]\d{3}[\)]\d{3}[\-]\d{4}"-->
+		</div>
+		<div class="small-3 cell">
+			<span class="label expand-label"> Cell Phone</span><br>
+			<input name="cellPhoneNum" id="cellPhoneNum" placeholder="Cell phone" type="tel"><!--pattern="[\(]\d{3}[\)]\d{3}[\-]\d{4}"-->
+		</div>
+	</div>
