@@ -16,7 +16,14 @@
     "formidable": "latest",
     "sqlite3": "latest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdoc": "latest",
+    "gulp": "latest",
+    "gulp-git": "latest",
+    "gulp-minify-ejs": "latest",
+    "gulp-sass": "latest",
+    "gulp-terser": "latest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BackPacker777/2020.NNSP-IncidentForm.git"
