@@ -9,7 +9,7 @@
   "author": "Howard Bates",
   "license": "MIT",
   "engines": {
-    "node": ">= 12.12.0"
+    "node": ">= 13.0.1"
   },
   "dependencies": {
     "ejs": "latest",
