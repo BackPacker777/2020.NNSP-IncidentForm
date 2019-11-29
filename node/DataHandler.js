@@ -7,7 +7,7 @@ const SQL = require('sqlite3').verbose();
 
 class DataHandler {
     constructor() {
-        this.initDB();
+        // this.initDB();
     }
 
     initDB() {

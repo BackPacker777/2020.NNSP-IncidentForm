@@ -6,7 +6,7 @@ const DATA_HANDLER = require('./node/DataHandler');
 
 class app {
     constructor() {
-        this.data_handler = new DATA_HANDLER();
+        // this.data_handler = new DATA_HANDLER();
         this.ejsData = null;
         this.user = null;
         this.loadServer();
