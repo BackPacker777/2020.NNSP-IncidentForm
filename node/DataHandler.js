@@ -3,7 +3,7 @@
 "use strict";
 
 const FS = require('fs');
-const SQL = require('sqlite3').verbose();
+// const SQL = require('sqlite3').verbose();
 
 class DataHandler {
     constructor() {
