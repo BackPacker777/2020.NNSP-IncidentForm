@@ -455,27 +455,27 @@ export default class EventHandler {
         witnessDiv.id = `w${count}`;
         let witness = `
                     <div class="small-2 cell">
-                        <label class="radius secondary label">Witness ${labelCount}</label>
+                        <span class="label expand-label">Witness ${labelCount} - Last Name</span>
                         <input name="w${count}LastName" id="w${count}LastName" type="text" placeholder="Last Name">
                     </div>
                     <div class="small-2 cell">
-                    <br>
+                        <span class="label expand-label">First Name</span>
                         <input name="w${count}FirstName" id="w${count}FirstName" type="text" placeholder="First Name">
                     </div>
                     <div class="small-2 cell">
-                    <br>
+                        <span class="label expand-label">Home Phone</span>
                         <input name="w${count}HomePhoneNum" id="w${count}HomePhoneNum" type="tel" placeholder="Phone number">
                     </div>
                     <div class="small-2 cell">
-                    <br>
+                        <span class="label expand-label">Cell Phone</span>
                         <input name="w${count}CellPhoneNum" id="w${count}CellPhoneNum" type="tel" placeholder="Cell number">
                     </div>
                     <div class="small-3 cell">
-                    <br>
+                        <span class="label expand-label">Street</span>
                         <input name="w${count}Street" id="w${count}Street" type="text" placeholder="Street number">
                     </div>
-                        <div class="small-1 cell">
-                    <br>
+                    <div class="small-1 cell">
+                        <span class="label expand-label warning"><i class="fas fa-exclamation-triangle"></i> Zip</span><br>
                         <input name="w${count}Zip" id="w${count}Zip" type="text" placeholder="Zip" required>
                     </div>
                     <input name="w${count}City" id="w${count}City" type="none" hidden>
@@ -490,7 +490,7 @@ export default class EventHandler {
             document.getElementById("witnesses").appendChild(witnessDiv);
             document.getElementById(witnessDiv.id).innerHTML += witness;
             let removeMe;
-            document.getElementById(`w${count}Zip`).addEventListener("blur",  removeMe = () => {
+            document.getElementById(`w${count}Zip`).addEventListener("change",  removeMe = () => {
                 if (document.getElementById(`w${count}Zip`).value) {
                     for (let element of this.zipData) {
                         if (document.getElementById(`w${count}Zip`).value === element[0]) {
