@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "ejs": "latest",
-    "formidable": "latest",
-    "sqlite3": "latest"
+    "formidable": "latest"
   },
   "devDependencies": {
     "jsdoc": "latest",

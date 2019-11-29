@@ -1,11 +1,11 @@
 "use strict";
 import SetSessionStorage from './SetSessionStorage.js';
 import FadeStuff from './FadeStuff.js';
-import AdminControl from './AdminControl.js';
+// import AdminControl from './AdminControl.js';
 
 export default class EventHandler {
     constructor(year, day, month) {
-        this.adminControl = new AdminControl();
+        // this.adminControl = new AdminControl();
         this.loadZipData();
         this.loadHills();
         this.loadLifts();
