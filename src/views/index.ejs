@@ -1,4 +1,4 @@
-<% include public/views/header.ejs %>
+<%- include ('public/views/header'); -%>
 <div id="tipTop">
     <div class="grid-container fluid">
         <div class="grid-x grid-padding-x black">
@@ -47,7 +47,7 @@
                 <div class="small-1 cell vertical-center" id="dtSymbol"></div>
             </div>
             <div id="dateTime">
-                <% include public/views/dateTime.ejs %>
+                <%- include ('public/views/dateTime'); -%>
             </div>
         </fieldset>
         <br>
@@ -59,7 +59,7 @@
                 <div class="small-1 cell vertical-center" id="ipSymbol"></div>
             </div>
             <div id="injuredPerson">
-                <% include public/views/injuredPerson.ejs %>
+                <%- include ('public/views/injuredPerson'); -%>
             </div>
         </fieldset>
         <br>
@@ -71,7 +71,7 @@
                 <div class="small-1 cell vertical-center" id="phSymbol"></div>
             </div>
             <div id="patientHistory">
-                <% include public/views/patient_history.ejs %>
+                <%- include ('public/views/patient_history'); -%>
             </div>
         </fieldset>
         <br>
@@ -83,7 +83,7 @@
                 <div class="small-1 cell vertical-center" id="loSymbol"></div>
             </div>
             <div id="location">
-                <% include public/views/location.ejs %>
+                <%- include ('public/views/location'); -%>
             </div>
         </fieldset>
         <br>
@@ -95,7 +95,7 @@
                 <div class="small-1 cell vertical-center" id="shSymbol"></div>
             </div>
             <div id="skiingHistory">
-                <% include public/views/skiingHistory.ejs %>
+                <%- include ('public/views/skiingHistory'); -%>
             </div>
         </fieldset>
         <br>
@@ -107,7 +107,7 @@
                 <div class="small-1 cell vertical-center" id="eqSymbol"></div>
             </div>
             <div id="equipment">
-                <% include public/views/equipment.ejs %>
+                <%- include ('public/views/equipment'); -%>
             </div>
         </fieldset>
         <br>
@@ -119,7 +119,7 @@
                 <div class="small-1 cell vertical-center" id="idSymbol"></div>
             </div>
             <div id="incidentDescription">
-                <% include public/views/incidentDescription.ejs %>
+                <%- include ('public/views/incidentDescription'); -%>
             </div>
         </fieldset>
         <br>
@@ -131,7 +131,7 @@
                 <div class="small-1 cell vertical-center" id="scSymbol"></div>
             </div>
             <div id="siteConditions">
-                <% include public/views/siteConditions.ejs %>
+                <%- include ('public/views/siteConditions'); -%>
             </div>
         </fieldset>
         <br>
@@ -143,7 +143,7 @@
                 <div class="small-1 cell vertical-center" id="jdSymbol"></div>
             </div>
             <div id="injuryData">
-                <% include public/views/injury_data.ejs %>
+                <%- include ('public/views/injury_data'); -%>
             </div>
         </fieldset>
         <br>
@@ -155,7 +155,7 @@
                 <div class="small-1 cell vertical-center" id="faSymbol"></div>
             </div>
             <div id="firstAid">
-                <% include public/views/firstAid.ejs %>
+                <%- include ('public/views/firstAid'); -%>
             </div>
         </fieldset>
         <br>
@@ -167,7 +167,7 @@
                 <div class="small-1 cell vertical-center" id="ptSymbol"></div>
             </div>
             <div id="patrollers">
-                <% include public/views/patrollers.ejs %>
+                <%- include ('public/views/patrollers'); -%>
             </div>
         </fieldset>
         <br>
@@ -179,7 +179,7 @@
                 <div class="small-1 cell vertical-center" id="tdSymbol"></div>
             </div>
             <div id="transport">
-                <% include public/views/transport.ejs %>
+                <%- include ('public/views/transport'); -%>
             </div>
         </fieldset>
         <br>
@@ -191,7 +191,7 @@
                 <div class="small-1 cell vertical-center" id="wtSymbol"></div>
             </div>
             <div id="witnesses">
-                <% include public/views/witnesses.ejs %>
+                <%- include ('public/views/witnesses'); -%>
             </div>
         </fieldset>
         <br>
@@ -203,7 +203,7 @@
                 <div class="small-1 cell vertical-center" id="rcSymbol"></div>
             </div>
             <div id="completer">
-                <% include public/views/completer.ejs %>
+                <%- include ('public/views/completer'); -%>
             </div>
         </fieldset>
         <br>
@@ -214,5 +214,5 @@
 <!--<div id="admin">
     < include public/views/admin.ejs >
 </div>-->
-<% include public/views/no_print.ejs %>
-<% include public/views/footer.ejs %>
+<%- include ('public/views/no_print'); -%>
+<%- include ('public/views/footer'); -%>
