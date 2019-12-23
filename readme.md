@@ -1,5 +1,5 @@
 ## TODO:
-* Update & freshen UX
+* ~~Update & freshen UX~~
 * Allow client self-setup
 * Allow file upload
 * Add req class for required fields
