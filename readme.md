@@ -3,5 +3,5 @@
 * Allow client self-setup
 * Allow file upload
 * Add req class for required fields
-* Create admin page
+* Create admin page?
 * Migrate to 100% fetch
