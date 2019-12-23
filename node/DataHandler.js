@@ -3,11 +3,11 @@
 "use strict";
 
 const FS = require('fs');
-// const SQL = require('sqlite3').verbose();
+const SQL = require('sqlite3').verbose();
 
 class DataHandler {
     constructor() {
-        // this.initDB();
+        this.initDB();
     }
 
     initDB() {
@@ -286,6 +286,7 @@ class DataHandler {
 
     insertRow(data) {
         data = JSON.parse(data);
+        console.log(data);
         this.db.run(`INSERT INTO nnsp_patients (lastName, firstName, gender, dob, age, height, weight, patientStreet, patientCity, patientState, patientZip, email, occupation, homePhoneNum, cellPhoneNum, ability, priorInjury, yearInjured, healthInsurance, medications, ticketType, groupType)
          VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [data.lastName, data.firstName, data.gender, data.dob, data.age, data.height, data.weight, data.patientStreet, data.patientCity, data.patientState, data.patientZip, data.email, data.occupation, data.homePhone, data.cellPhone, data.ability, data.priorInjury, data.yearInjured, data.healthInsurance, data.medications, data.ticketType, data.groupType],

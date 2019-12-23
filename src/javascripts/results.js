@@ -415,11 +415,10 @@ class results {
 
     //SITE CONDITIONS-------------------------------------------------------------------------------------------------------
         if (sessionStorage.getItem('sceneSurface')) {
-            console.log(sessionStorage.getItem('sceneSurface'));
             if (sessionStorage.getItem('sceneSurface').match("powder")) {
                 document.getElementById('powder').checked = true;
             }
-            if (sessionStorage.getItem('sceneSurface').match("packedpowder")) {
+            if (sessionStorage.getItem('sceneSurface').match("packedPowder")) {
                 document.getElementById('packedPowder').checked = true;
             }
             if (sessionStorage.getItem('sceneSurface').match("hardpacked")) {

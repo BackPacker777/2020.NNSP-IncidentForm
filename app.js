@@ -6,7 +6,7 @@ const DATA_HANDLER = require('./node/DataHandler');
 
 class app {
     constructor() {
-        // this.data_handler = new DATA_HANDLER();
+        this.data_handler = new DATA_HANDLER();
         this.ejsData = null;
         this.user = null;
         this.loadServer();
@@ -106,14 +106,14 @@ class app {
                         response.end(data);
                     });
                 } else if (request.headers['x-requested-with'] === 'fetch.0') {
-                    // const PARSER = require('querystring');
+                    const PARSER = require('querystring');
                     let body = '';
                     request.on('data', chunk => {
                         body += chunk.toString();
                     });
                     request.on('end', () => {
+                        console.log(PARSER.parse(body));
                         this.data_handler.insertRow(body);
-                        // console.log(PARSER.parse(body));
                     });
                 } else if (request.headers['x-requested-with'] === 'fetch.1') {
                     let criteria = '';

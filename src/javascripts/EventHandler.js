@@ -165,6 +165,7 @@ export default class EventHandler {
     handleTdSymbolClick() {
         document.getElementById("destination").addEventListener("click", () => {
             this.doSymbolClicks('witnesses', 'wtSymbol', true);
+            this.doSymbolClicks('completer', 'rcSymbol', true);
         });
         document.getElementById("tdSymbol").addEventListener("click", () => {
             this.doSymbolClicks('transport', 'tdSymbol', false);
