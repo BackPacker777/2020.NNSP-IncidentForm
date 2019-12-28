@@ -112,7 +112,7 @@ class app {
                         body += chunk.toString();
                     });
                     request.on('end', () => {
-                        console.log(PARSER.parse(body));
+                        // console.log(PARSER.parse(body));
                         this.data_handler.insertRow(body);
                     });
                 } else if (request.headers['x-requested-with'] === 'fetch.1') {

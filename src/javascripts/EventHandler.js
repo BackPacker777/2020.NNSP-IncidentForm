@@ -511,7 +511,7 @@ export default class EventHandler {
 
     handleSubmit() {
         document.getElementById("submit").addEventListener("click", () => {
-            if (document.getElementById("mainForm").checkValidity()) {
+            if (document.getElementById("mainForm").reportValidity()) {
                 console.log(`submit button pressed.`);
                 new SetSessionStorage();
                 window.open('/public/views/results.html', '_blank', 'location=yes,height=900,width=1000,scrollbars=yes,status=yes');
@@ -548,9 +548,16 @@ export default class EventHandler {
     }
 
     validateListen() {
-        document.addEventListener('click', () => {
+        const form = document.getElementById('mainForm');
+        let handleValidate = (event) => {
+            let target = event.target;
+            let id = target.id;
+            document.getElementById(id).reportValidity();
             this.validateForm();
-        });
+        };
+        form.addEventListener('focusin', handleValidate, false);
+        form.addEventListener('focusout', handleValidate, false);
+        form.addEventListener('click', handleValidate, false);
     }
 
     validateForm() {
@@ -562,9 +569,31 @@ export default class EventHandler {
             }
         }
         if (valid) {
-            document.getElementById('submit').disabled = false;
+            let arrivalRadios = document.getElementsByName("arrival");
+            let leaveRadios = document.getElementsByName("leave");
+            let destRadios = document.getElementsByName("dest");
+            valid = this.transportValid(arrivalRadios);
+            valid = this.transportValid(leaveRadios);
+            valid = this.transportValid(destRadios);
+            if (valid) {
+                document.getElementById('submit').disabled = false;
+            }
         } else {
             console.log(`NOT valid yet!`);
         }
+    }
+
+    transportValid(radios) {
+        let valid = false;
+        let i = 0;
+        while (! valid && i < radios.length) {
+            if (radios[i].checked) {
+                valid = true;
+                break;
+            } else {
+                i++;
+            }
+        }
+        return valid;
     }
 }

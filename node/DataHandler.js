@@ -239,7 +239,7 @@ class DataHandler {
                     console.log(`DATE ERR = ${err}`);
                 } else {
                     data.push(rows);
-                    console.log(data);
+                    // console.log(data);
                     callback(data);
                 }
             });
@@ -250,7 +250,7 @@ class DataHandler {
                     console.log(`NAME ERR = ${err}`);
                 } else {
                     data.push(rows);
-                    console.log(data);
+                    // console.log(data);
                     callback(data);
                 }
             });
@@ -261,7 +261,7 @@ class DataHandler {
                     console.log(`ID ERR = ${err}`);
                 } else {
                     data.push(rows);
-                    console.log(data);
+                    // console.log(data);
                     callback(data);
                 }
             });
