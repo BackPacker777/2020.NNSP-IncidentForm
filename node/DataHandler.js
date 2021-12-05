@@ -173,7 +173,7 @@ class DataHandler {
             filePath = 'data/lifts.csv';
             columns = 1;
         } else if (data === 'patrollers') {
-            filePath = 'data/patrollers2021.csv';
+            filePath = 'data/patrollers.csv';
             columns = 2;
         }
 
